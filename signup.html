@@ -1,0 +1,64 @@
+{% extends "framework.html"  %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="index-wrap">
+    <div class="single-panel clearfix">
+        <div class="single-panel-inner middle">
+            <div class="single-panel-header">
+                <h3>注册新用户</h3>
+            </div>
+            <div class="single-panel-body">
+                <div class="single-panel-section">
+                    <form class="form-horizontal" method="post" action="/signup">
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label">邮箱:</label>
+                            <div class="col-xs-10">
+                                <input class="form-control" type="email" placeholder="你的常用邮箱地址" name="signup_email" required="required" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label">用户名:</label>
+                            <div class="col-xs-10">
+                                <input class="form-control" type="text" placeholder="由字母、数字、下划线组成，以字母开头" name="signup_name" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label">真实姓名:</label>
+                            <div class="col-xs-10">
+                                <input class="form-control" type="text" placeholder="输入真实姓名，方便团队成员认识你" name="signup_display_name" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label">密码:</label>
+                            <div class="col-xs-10">
+                                <input class="form-control" type="password" placeholder="最小长度6位" name="signup_password" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label">确认密码:</label>
+                            <div class="col-xs-10">
+                                <input class="form-control" type="password" placeholder="再输入一次密码" name="repeated_password" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-2"></div>
+                            <div class="col-xs-10">
+                                <button id="submit" class="btn btn-success btn-lg btn-block" type="submit">注册新用户</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="single-panel-footer">
+                <div class="pull-right">
+                    点击注册，表明你同意我们的
+                    <a href="/forgot">服务条款</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block initscript %}
+<script src="/static/js/signup.js"></script>
+{% endblock %}
